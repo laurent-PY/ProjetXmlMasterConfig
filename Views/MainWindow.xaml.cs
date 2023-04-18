@@ -32,5 +32,10 @@ namespace GestionAuto
         {
             ViewsModelsClass.choixMarque();
         }
+
+        private void MODELE_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            ViewsModelsClass.MODELE_SelectionChanged();
+        }
     }
 }

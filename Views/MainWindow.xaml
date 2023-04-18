@@ -38,7 +38,7 @@
 
         <GroupBox Header="Modéle : " Margin="5,5,5,5" Grid.Row="1" Grid.Column="0">
             <StackPanel>
-                <ComboBox IsEditable="False" Margin="5,5,5,5" x:Name="MODELE">
+                <ComboBox IsEditable="False" Margin="5,5,5,5" x:Name="MODELE" SelectionChanged="MODELE_SelectionChanged" >
                 </ComboBox>
             </StackPanel>
         </GroupBox>
@@ -49,7 +49,7 @@
 
         <GroupBox Header="Infos" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5" >
             <DockPanel>
-                <TextBox BorderThickness="0" x:Name="errorCode" Visibility="Hidden" Width="auto" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox BorderThickness="0" x:Name="INFOS"  VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"/>
             </DockPanel>
         </GroupBox>
 

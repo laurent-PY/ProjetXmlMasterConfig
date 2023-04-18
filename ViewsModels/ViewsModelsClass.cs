@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using static GestionAuto.AppConfig.Configurations;
@@ -40,18 +41,12 @@ namespace GestionAuto.ViewsModels
 
             string marque = main.MARQUE.SelectedItem.ToString();
 
-            
-
 
             if (type == "Voiture" && marque == "Audi")
             {
                 displayModeleVoiture(marque);
             }
             if (type == "Voiture" && marque == "Renault")
-            {
-                displayModeleVoiture(marque);
-            }
-            if (type == "Utilitaire" && marque == "Renault")
             {
                 displayModeleVoiture(marque);
             }
@@ -68,6 +63,25 @@ namespace GestionAuto.ViewsModels
             string[] tabListModel = modeleItem.Split(';');
             main.MODELE.ItemsSource = tabListModel;
             main.MODELE.SelectedValue = tabListModel[0];
+        }
+
+        public static void MODELE_SelectionChanged()
+        {
+            if (main.MODELE.SelectedItem == null)
+            {
+                main.MODELE.SelectedItem = main.MODELE.Items[0];
+            }
+
+            if (main.TYPE.SelectedItem == null)
+            {
+                main.TYPE.SelectedItem = main.TYPE.Items[0];
+            }
+
+            
+            string modele = main.MODELE.SelectedItem.ToString();
+            string comment = PathConfig.ConfigurationList.FirstOrDefault(x => x.key == "COMMENT").ListParam.FirstOrDefault(y => y.key == modele).value.ToString();
+            Console.WriteLine(comment);
+            main.INFOS.Text = comment;
         }
     }
 }
