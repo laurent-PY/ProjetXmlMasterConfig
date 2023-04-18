@@ -25,7 +25,12 @@ namespace GestionAuto
 
         private void TYPE_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            ViewsModelsClass.choixVehicule();
+            ViewsModelsClass.choixType();
+        }
+
+        private void VEHICULE_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            ViewsModelsClass.choixMarque();
         }
     }
 }

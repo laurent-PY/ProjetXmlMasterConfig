@@ -7,6 +7,7 @@ namespace GestionAuto.AppConfig
     public class Configurations
     {
         private static XmlSerializer deserializer;
+        private static XmlSerializer serializer;
 
         [XmlElement(ElementName = "Configuration")]
         public List<Configuration> ListConfiguration;
@@ -18,6 +19,18 @@ namespace GestionAuto.AppConfig
                 if (deserializer == null)
                     deserializer = new XmlSerializer(typeof(Configurations));
                 return deserializer;
+            }
+        }
+
+        private static XmlSerializer Serializer
+        {
+            get
+            {
+                if(serializer == null)
+                {
+                    serializer = new XmlSerializer(typeof(Configurations));
+                }
+                return serializer;
             }
         }
 

@@ -18,7 +18,7 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="60"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -29,11 +29,28 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Véhicule : " Margin="5,5,5,5" Grid.Column="1">
+        <GroupBox Header="Marque : " Margin="5,5,5,5" Grid.Column="1">
             <StackPanel>
-                <ComboBox IsEditable="False" Margin="5,5,5,5" x:Name="VEHICULE">
+                <ComboBox IsEditable="False" Margin="5,5,5,5" x:Name="MARQUE" SelectionChanged="VEHICULE_SelectionChanged">
                 </ComboBox>
             </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Modéle : " Margin="5,5,5,5" Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                <ComboBox IsEditable="False" Margin="5,5,5,5" x:Name="MODELE">
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+
+        <DockPanel Grid.Column="0" Grid.Row="5" Margin="10">
+            <Button Name="SaveInfos" Content="Sauver" IsDefault="True" FontSize="20"/>
+        </DockPanel>
+
+        <GroupBox Header="Infos" Grid.Row="1"  Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5" >
+            <DockPanel>
+                <TextBox BorderThickness="0" x:Name="errorCode" Visibility="Hidden" Width="auto" Height="30" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            </DockPanel>
         </GroupBox>
 
     </Grid>
